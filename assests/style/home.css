@@ -1,0 +1,159 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ECD4BF;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+}
+.prof-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+.username{
+    font: 14px 'Poppins', sans-serif;
+    color: #3f414d;
+}
+.create-post{
+    font: 20px 'Poppins', sans-serif;
+    color: #3f414d;
+}
+.logo-name{
+    font: 28px 'Poppins', sans-serif;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+    margin-right: 40px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 280px;
+}
+i{
+    color: #6A994E;
+    cursor: pointer;
+}
+.content{
+    display: flex;
+    margin: 20px;
+    justify-content: space-around;
+}
+.posts{
+    width: 50%;
+}
+.live-chat{
+    max-width: 20%;
+    background-color: white;
+    border-radius: 5px;
+    height: auto;
+}
+.users{
+    min-width: 20%;
+    background-color: white;
+    border-radius: 5px;
+    height: auto;
+}
+.user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+.new-post{
+    padding: 30px;
+    background-color: white;
+    border-radius: 5px;
+    height: auto;
+}
+.post-text{
+    margin: 30px 0px;
+}
+.new-post-text{
+    padding: 12px 20px;
+    width: 80%;
+    font-size: 16px;
+    border: none;
+    resize: none;
+    outline: none;
+}
+.add-photo{
+    display: flex;
+    align-items: center;
+    background-color: #386641;
+    color: white;
+    padding: 12px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.post{
+    margin: 10px 0px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 5px;
+    height: auto;
+}
+.post-owner{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.post-content{
+    margin: 20px 0px;
+
+}
+.post i{
+    color: #BC4749;
+    cursor: pointer;
+}
+
+.username1{
+    font: 16px 'Poppins', sans-serif;
+    color: #3f414d;
+}
+.interactions{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    color: gray;
+    margin: 30px 0px;
+}
+.comment{
+    display: flex;
+    margin: 20px 0px;
+}
+.comment-content{
+    display: block;
+    margin-left: 20px;
+    width: 100%;
+    height: auto;
+}
+.new-comment-text{
+    margin: 10px 0px;
+    padding: 5px;
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    resize: none;
+    outline: none;
+}
+.addButtons{
+    display: flex;
+    justify-content: space-between;
+}
+.interactions button{
+    background-color: transparent;
+    border: none;
+}

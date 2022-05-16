@@ -10,6 +10,6 @@ after that the user will be directed to the login page to confirm his/her inform
 Home page containes friends posts , a navbar to give the user the ability to go through pages , and some sections for adding friends & seeing some advertisments :
 
 
-
+used technologies : php , bootstrab , css , html , ajax , JS , jQuery , sql 
 
 Team members  : Meera and Hadeel Qnaiby .

@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require_once "DBconf.php";
+// require_once "DBconf.php";
+require "myDB.php";
 // require "register_form.php";
     
     $password = $confirm_password =$firstName=$lastName=$teleNo=$address=$email=$gender=$image= "";
     $firstName_err=$lastName_err=$email_err =$teleNo_err=$password_err = $confirm_password_err = "";
-    // $_SESSION['email_err'] $_SESSION['username_err']   $_SESSION['password_err'] $_SESSION['confirm_password_err'] $_SESSION['teleNo_err']
     
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 

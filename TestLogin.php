@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-require_once "DBconf.php";
+// require_once "DBconf.php";
+require "myDB.php";
+
 
 
 $email = $password = "";

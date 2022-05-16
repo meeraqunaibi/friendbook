@@ -14,7 +14,10 @@
 <h1> Welcome to the Admin panle </h1>
 <?php 
 
-require_once "DBconf.php";
+// require_once "DBconf.php";
+include ('Security.php');
+require "myDB.php";
+
 include ('Security.php');
 
 $idUser = $_SESSION['idUser'] ;

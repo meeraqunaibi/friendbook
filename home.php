@@ -61,8 +61,17 @@
 </head>
 <body>
     <?php
+    include ('Security.php');
     require "myDB.php";
     require "navbar.php";
+    
+    $idUser = $_SESSION['idUser'] ;
+    $query = "Select * from user where id = $idUser";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_array($result);
+    echo "Hello " . $row['firstName'] . " ".$row['lastName'];
+
+    
     ?>
     <div class="content">
         <?php 
@@ -86,7 +95,7 @@
             <?php
             $db = new MyDB();
             $posts = $db->getPosts();
-            $userid = 1;//will deleted
+            // $userid = 1;//will deleted
             foreach ($posts as $row){
                 echo "<div class='post'>";
                 echo "<div class='post-owner'>";//post owner
@@ -99,7 +108,8 @@
                 echo "<p class='post-content'>" . $row['content'] . "</p><br/>";
                 echo '<hr>';
                 echo '<div class="interactions">';
-                $isLiked = $db->isLiked($userid, $row['id']);
+                $isLiked = $db->isLiked($idUser, $row['id']);
+                // $isLiked = $db->isLiked($userid, $row['id']);
                 if($isLiked){
                     echo '<i id="' . $row['id'] . '"class="fa fa-thumbs-up fa-lg unlike " ></i>';
                 }

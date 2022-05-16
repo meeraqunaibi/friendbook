@@ -1,6 +1,8 @@
 <?php
 // Include config file
-require_once "DBconf.php";
+// require_once "DBconf.php";
+// include ('Security.php');
+require "myDB.php";
 require "login.php";
 ?> 
 <!DOCTYPE html>

@@ -1,0 +1,23 @@
+#advertTextArea{
+    width : 500px;
+}
+.top{
+    background-color: rgb(215, 250, 244);
+    width: 600px;
+    height: 200px;
+}
+.validationSpan{
+    color: rgb(228, 106, 122) ;     
+}
+
+input.form-control{
+    margin-bottom: 10px;
+}
+
+#signButton{
+    background-color:rgb(171, 59, 93);
+    border-color:  rgb(148, 37, 71);
+}
+.linkToOtherPage{
+    color: rgb(226, 43, 134);
+}

@@ -6,7 +6,7 @@ $commentContent =  $_POST['commentContent'];
 $postId = $_GET['id'];
 $userid = 1;
 $data = date("y-m-d");
-$query = "INSERT INTO comment (userid, postId, commentContent, datePosted) VALUES ($userid, $postId, '$commentContent', '$data')";
+$query = "INSERT INTO comment (content, dateComment,idUser, idPost) VALUES ('$commentContent', '$data', $userid, $postId)";
 $result = mysqli_query($conn, $query);
 
 if($result)

@@ -15,7 +15,7 @@ class MyDB{
     public function getUserInfo($id){
         $query = "select *
                 from user
-                where id = $id";
+                where idUser = $id";
         $conn = $this->connect();
         $result = $conn->query($query);
         $row = mysqli_fetch_assoc($result);
@@ -23,9 +23,9 @@ class MyDB{
     }
 
     public function getUsers($id){
-        $query = "select u.firstName, u.lastName, u.gender, u.id
-                from (select userid, friendid from friendship where userid!=$id && userid not in (select friendid from friendship where userid=$id)) as f, user u 
-                where u.id=f.userid";
+        $query = "select u.firstName, u.lastName, u.gender, u.idUser
+                from (select idUser, idFriend from friendship where idUser!=$id && idUser not in (select idFriend from friendship where idUser=$id)) as f, user u 
+                where u.idUser=f.idUser";
         $conn = $this->connect();
         $result = $conn->query($query);
         $rows = array();
@@ -38,7 +38,7 @@ class MyDB{
     public function getMyFriends($id){
         $query = "select u.firstName, u.lastName, u.gender 
                 from friendship f, user u
-                where f.userid=$id && u.id=f.friendid";
+                where f.idUser=$id && u.idUser=f.idFriend";
         $conn = $this->connect();
         $result = $conn->query($query);
         $rows = array();
@@ -63,10 +63,10 @@ class MyDB{
 
 
     public function getPosts(){
-        $query = "select p.id, firstName, lastName, content, date, numOfLikes
+        $query = "select p.idPost, firstName, lastName, content, datePost, numOfLikes
                 from post p, user u
-                where u.id = p.userid
-                order by date desc";
+                where u.idUser = p.idUser
+                order by datePost desc";
         $conn = $this->connect();
         $result = $conn->query($query);
         $rows = array();
@@ -76,10 +76,10 @@ class MyDB{
         return $rows;
     }
     public function getMyPosts($id){
-        $query = "select p.id , firstName, lastName, content, date, numOfLikes
+        $query = "select p.idPost , firstName, lastName, content, datePost, numOfLikes
                 from post p, user u
-                where u.id = p.userid and u.id=$id
-                order by date desc";
+                where u.idUser = p.idUser and u.idUser=$id
+                order by datePost desc";
         $conn = $this->connect();
         $result = $conn->query($query);
         $rows = array();
@@ -90,9 +90,9 @@ class MyDB{
     }
     
     public function getComment($id){
-        $query = "select commentContent
-        from comment
-        where postId=$id";
+        $query = "select c.content, u.firstName, u.lastName, u.gender
+        from comment c, user u
+        where u.idUser=c.idUser and c.idPost=$id";
         $conn = $this->connect();
         $result = $conn->query($query);
         $rows = array();

@@ -86,7 +86,7 @@ i{
     resize: none;
     outline: none;
 }
-.add-photo{
+.add-photo, .add-comment{
     display: flex;
     align-items: center;
     background-color: #386641;

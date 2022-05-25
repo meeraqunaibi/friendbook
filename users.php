@@ -22,7 +22,7 @@
             echo '<img class="prof-img" src="./assests/images/female.png">';
         }
         echo '<h6 class="username">' . $user['firstName'] . '&nbsp;' . $user['lastName'] . "</h6>";
-        echo "<a href='addUser.php?id=". $user['id'] ."'><i class='fa fa-plus fa-lg'></i></div></a>";
+        echo "<a href='addUser.php?id=". $user['idUser'] ."'><i class='fa fa-plus fa-lg'></i></div></a>";
     }
     echo '</div>';
     ?>

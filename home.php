@@ -93,36 +93,41 @@
                 echo "<img class='prof-img' src='./assests/images/flower.jpg'>";
                 echo "<div>";
                 echo "<h6 class='username1'>" . $row['firstName']. " " . $row['lastName'] . "</h6>";
-                echo "<p >" . $row['date'] . "</p>";
+                echo "<p >" . $row['datePost'] . "</p>";
                 echo "</div>";
                 echo "</div>";//post owner
                 echo "<p class='post-content'>" . $row['content'] . "</p><br/>";
                 echo '<hr>';
                 echo '<div class="interactions">';
-                $isLiked = $db->isLiked($userid, $row['id']);
+                $isLiked = $db->isLiked($userid, $row['idPost']);
                 if($isLiked){
-                    echo '<i id="' . $row['id'] . '"class="fa fa-thumbs-up fa-lg unlike " ></i>';
+                    echo '<i id="' . $row['idPost'] . '"class="fa fa-thumbs-up fa-lg unlike " ></i>';
                 }
                 else{
-                    echo '<i id="' . $row['id'] . '" class="fa fa-thumbs-up fa-lg like " ></i>';
+                    echo '<i id="' . $row['idPost'] . '" class="fa fa-thumbs-up fa-lg like " ></i>';
                 }
                 echo '<p id="likes">' . $row['numOfLikes'] .'</p> &nbsp like';
                 echo '<i class="fa fa-comments fa-lg"></i>';
                 echo '<p>comments</p>';
                 echo '</div>';
-                $comments = $db->getComment($row['id']);
+                $comments = $db->getComment($row['idPost']);
                 echo '<div class="comments">';
                 foreach ($comments as $rowc){         
                 echo '<div class="comment">';
-                echo '<img class="prof-img" src="./assests/images/flower.jpg">';
+                if($rowc['gender']=='male'){
+                    echo '<img class="prof-img" src="./assests/images/male.png">';
+                }
+                else{
+                    echo '<img class="prof-img" src="./assests/images/female.png">';
+                }
                 echo '<div class="comment-content">';
-                echo '<h6 class="username1">Meera Qunaibe</h6>';
-                echo '<p class="comment-text">'. $rowc['commentContent'] .'</p>';
+                echo '<h6 class="username1">' . $rowc['firstName']. " " . $rowc['lastName'] . '</h6>';
+                echo '<p class="comment-text">'. $rowc['content'] .'</p>';
                 echo '</div>';
                 echo '</div>';
                 }
                 echo '</div>';
-                echo '<form method="post" action="addComment.php?id='. $row['id'] .'">';
+                echo '<form method="post" action="addComment.php?id='. $row['idPost'] .'">';
                 echo '<textarea name="commentContent" class="new-comment-text" placeholder="Enter your comment ....."></textarea>';
                 echo '<input type="submit" class="add-photo">';
                 echo '</form>';

@@ -25,13 +25,13 @@ foreach ($posts as $row){
     echo "<img class='prof-img' src='./assests/images/flower.jpg'>";
     echo "<div>";
     echo "<h6 class='username1'>" . $row['firstName']. " " . $row['lastName'] . "</h6>";
-    echo "<p >" . $row['date'] . "</p>";
+    echo "<p >" . $row['datePost'] . "</p>";
     echo "</div>";
     echo "<div class='dropdown show'>
             <a class='btn btn-secondary dropdown-toggle' href='#' role='button' id='dropdownMenuLink' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'></a>
             <div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
               <button type='button' class='dropdown-item' data-bs-toggle='modal' data-bs-target='#exampleModalCenter'>Edit</button>
-              <a class='dropdown-item' href='delete.php?id=" . $row['id'] . "'>Delete</a>
+              <a class='dropdown-item' href='delete.php?id=" . $row['idPost'] . "'>Delete</a>
             </div>
           </div>
           <!-- Modal -->
@@ -50,7 +50,7 @@ foreach ($posts as $row){
                       <label for='postContent' class='form-label'>Post Content</label>
                       <input type='text' class='form-control' id='postContent' name='content' aria-describedby='emailHelp'>
                     </div>
-                    <input type='hidden' name='id' value='" . $row['id'] . "'>
+                    <input type='hidden' name='id' value='" . $row['idPost'] . "'>
                     <input type='submit' class='btn btn-primary'>
                   </form>
                 </div>
@@ -65,24 +65,24 @@ foreach ($posts as $row){
     echo "<p class='post-content'>" . $row['content'] . "</p><br/>";
     echo '<hr>';
     echo '<div class="interactions">';
-    echo '<button onclick="loadXMLDoc(' . $row['id'] . "," . $row['numOfLikes'] . ')"><i class="fa fa-thumbs-up fa-lg"></i></button>';
+    echo '<button onclick="loadXMLDoc(' . $row['idPost'] . "," . $row['numOfLikes'] . ')"><i class="fa fa-thumbs-up fa-lg"></i></button>';
     echo '<p id="likes">' . $row['numOfLikes'] .'</p> &nbsp like';
     echo '<i class="fa fa-comments fa-lg"></i>';
     echo '<p>comments</p>';
     echo '</div>';
-    $comments = $db->getComment($row['id']);
+    $comments = $db->getComment($row['idPost']);
     echo '<div class="comments">';
     foreach ($comments as $rowc){           
     echo '<div class="comment">';
     echo '<img class="prof-img" src="./assests/images/flower.jpg">';
     echo '<div class="comment-content">';
-    echo '<h6 class="username1">Meera Qunaibe</h6>';
-    echo '<p class="comment-text">'. $rowc['commentContent'] .'</p>';
+    echo '<h6 class="username1">' . $rowc['firstName']. " " . $rowc['lastName'] . '</h6>';
+    echo '<p class="comment-text">'. $rowc['content'] .'</p>';
     echo '</div>';
     echo '</div>';
     }
     echo '</div>';
-    echo '<form method="post" action="addComment.php?id='. $row['id'] .'">';
+    echo '<form method="post" action="addComment.php?id='. $row['idPost'] .'">';
     echo '<textarea name="commentContent" class="new-comment-text" placeholder="Enter your comment ....."></textarea>';
     echo '<input type="submit" class="add-photo">';
     echo '</form>';

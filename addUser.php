@@ -1,9 +1,10 @@
 <?php
 require 'myDB.php';
+include ('Security.php');
 $db = new MyDB();
 $conn = $db->connect();
 $friendId = $_GET['id'];
-$userid = 1;
+$userid =  $_SESSION['idUser'];
 $data = date("y-m-d");
 $query = "INSERT INTO friendship VALUES ($userid, $friendId, '$data'), ($friendId, $userid, '$data')";
 $result = mysqli_query($conn, $query);

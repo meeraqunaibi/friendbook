@@ -9,7 +9,8 @@
 </head>
 <body>
     <?php
-    $id = 1;
+    include ('Security.php');
+    $id =  $_SESSION['idUser'] ;
     $db = new MyDB();
     echo '<div class="users">';
     echo '<h4>My Friends</h4>';

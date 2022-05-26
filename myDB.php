@@ -23,7 +23,7 @@ class MyDB{
     }
 
     public function getUsers($id){
-        $query = "select u.firstName, u.lastName, u.gender, u.idUser
+        $query = "select DISTINCT u.firstName, u.lastName, u.gender, u.idUser
                 from (select idUser, idFriend from friendship where idUser!=$id && idUser not in (select idFriend from friendship where idUser=$id)) as f, user u 
                 where u.idUser=f.idUser";
         $conn = $this->connect();

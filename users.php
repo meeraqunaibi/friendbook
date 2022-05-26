@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-    $id = 1;
+    $id =  $_SESSION['idUser'];
     $db = new MyDB();
     echo '<div class="users">';
     $users = $db->getUsers($id);

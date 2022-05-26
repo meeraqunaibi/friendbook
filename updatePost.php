@@ -1,5 +1,6 @@
 <?php
 require 'myDB.php';
+include ('Security.php');
 $db = new MyDB();
 $conn = $db->connect();
 $date = date("y-m-d");

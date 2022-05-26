@@ -2,8 +2,7 @@
 
 session_start();
 // require_once "DBconf.php";
-require "myDB.php";
-
+require_once "dbCon.php";
 
 
 $email = $password = "";
@@ -94,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                             if($_SESSION["userType"]  == 1)
                             {
-                                header('Location: index.php');
+                                header('Location: home.php');
                             }
                             else if($_SESSION["userType"] == 2 )
                             {

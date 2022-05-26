@@ -21,9 +21,9 @@
             <a href="home.php"><i class="fa fa-home"></i></a>
             <i class="fa fa-user"></i>
             <i class="fa fa-bell"></i>
-            <i class="fa fa-envelope"></i>
                 <?php
-                    $id = 1;
+                require "logout_form.php";
+                    $id = $_SESSION['idUser'];
                     $db = new MyDB();
                     $user = $db->getUserInfo($id);
                     if($user['gender']=='male'){

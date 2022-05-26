@@ -2,8 +2,8 @@
 // Include config file
 // require_once "DBconf.php";
 // include ('Security.php');
-require "myDB.php";
-require "login.php";
+require_once "dbCon.php";
+require "TestLogin.php";
 ?> 
 <!DOCTYPE html>
 <html lang="en">

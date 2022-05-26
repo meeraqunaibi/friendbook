@@ -1,6 +1,6 @@
 <?php
 require "register.php";
-require "myDB.php";
+require_once "dbCon.php";
 // require_once "DBconf.php";
 ?>
 

@@ -1,9 +1,11 @@
 <?php
 require 'myDB.php';
+include ('Security.php');
+
 $db = new MyDB();
 $conn = $db->connect();
 $postId = $_GET['id'];
-$userId = 1;
+$userId =  $_SESSION['idUser'];
 $query = "select * from post where idPost=$postId ";
 $result = $conn->query($query);
 $row = $result->fetch_assoc();

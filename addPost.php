@@ -1,9 +1,10 @@
 <?php
 require 'myDB.php';
+include ('Security.php');
 $db = new MyDB();
 $conn = $db->connect();
 $content =  $_POST['content'];
-$userid = 1;
+$userid =  $_SESSION['idUser'];
 $date = date("y-m-d");
 $query = "INSERT INTO post (content, datePost, idUser) VALUES ('$content', '$date', $userid)";
 $result = mysqli_query($conn, $query);

@@ -12,12 +12,14 @@
 <body>
 <?php
 require "myDB.php";
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+include ('Security.php');
 require "navbar.php";
 echo "<div class='content'>";
 require "liveChat.php";
 echo "<div class='posts'>";
 $db = new MyDB();
-$id = 1;
+$id =  $_SESSION['idUser'];
 $posts = $db->getMyPosts($id);
 foreach ($posts as $row){
     echo "<div class='post'>";

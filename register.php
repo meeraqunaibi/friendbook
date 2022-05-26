@@ -2,12 +2,12 @@
 session_start();
 
 // require_once "DBconf.php";
-require "myDB.php";
+require_once "dbCon.php";
 // require "register_form.php";
     
     $password = $confirm_password =$firstName=$lastName=$teleNo=$address=$email=$gender=$image= "";
     $firstName_err=$lastName_err=$email_err =$teleNo_err=$password_err = $confirm_password_err = "";
-    
+
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // Validations :

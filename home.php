@@ -66,10 +66,10 @@
     require "navbar.php";
     
     $idUser = $_SESSION['idUser'] ;
-    $query = "Select * from user where id = $idUser";
-    $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-    echo "Hello " . $row['firstName'] . " ".$row['lastName'];
+    // $query = "Select * from user where id = $idUser";
+    // $result = mysqli_query($con, $query);
+    // $row = mysqli_fetch_array($result);
+    // echo "Hello " . $row['firstName'] . " ".$row['lastName'];
 
     
     ?>
@@ -108,7 +108,7 @@
                 echo "<p class='post-content'>" . $row['content'] . "</p><br/>";
                 echo '<hr>';
                 echo '<div class="interactions">';
-                $isLiked = $db->isLiked($userid, $row['idPost']);
+                $isLiked = $db->isLiked($idUser, $row['idPost']);
                 if($isLiked){
                     echo '<i id="' . $row['idPost'] . '"class="fa fa-thumbs-up fa-lg unlike " ></i>';
                 }

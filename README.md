@@ -12,6 +12,15 @@ after that the user will be directed to the login page to confirm his/her inform
 ![](assests/images/login.png)
 
 Home page containes friends posts , a navbar to give the user the ability to go through pages , and some sections for adding friends & seeing some advertisments :
+![](assests/images/home.jpeg)
+
+when the user clicks on his/her name , the user will be directed to the profile page where he can send massages and see a list of his/her friends.
+![](assests/images/profile.jpeg)
+
+
+We also have the admin panle to control users and the advertisments displayed in the admin page
+![](assests/images/admin.jpeg)
+
 
 
 used technologies : php , bootstrab , css , html , ajax , JS , jQuery , sql , apache

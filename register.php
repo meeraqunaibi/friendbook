@@ -98,6 +98,7 @@ require_once "dbCon.php";
             $confirm_password = trim($_POST["confirm_password"]);
             if(!isset($_SESSION['password_err']) && ($password != $confirm_password)){
                 $_SESSION['confirm_password_err'] = $confirm_password_err= "Password did not match.";
+                header("location: register_form.php");
             }
             echo $confirm_password;
         }

@@ -34,12 +34,12 @@ if(! $idUser){
 ?>
 
 </header>
-<form action = "Advert.php">
+<form method='post' action = "Advert.php">
   </div>
   
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Add a new Advertisment : </label>
-    <textarea id = "advertTextArea" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+    <textarea id = "advertTextArea" class="form-control" id="exampleFormControlTextarea1" rows="6" name="content"></textarea>
   </div>
 
   <div class="form-group">

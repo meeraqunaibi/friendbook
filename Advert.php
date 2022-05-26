@@ -1,6 +1,6 @@
 <?php
 
-require_once "DBconf.php";
+require_once "dbCon.php";
 include ('Security.php');
 
 $idUser = $_SESSION['idUser'] ;
@@ -37,6 +37,4 @@ $sql = "INSERT INTO advertisement (content,idUser) VALUES (?,?)";
         }
        
         mysqli_close($con);
-
-
 ?>

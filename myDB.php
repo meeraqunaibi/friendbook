@@ -4,6 +4,7 @@ class MyDB{
     public function connect(){
         if(!isset(self::$connecttion)){
             self::$connection = new mysqli("localhost", "friendbook-user", "F2022!!!", "friendship");
+            // self::$connection = new mysqli("localhost", "root", "root", "php");
         }
         if(self::$connection == false){
             echo self::$connection->connect_error;

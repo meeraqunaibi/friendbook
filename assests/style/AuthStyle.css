@@ -21,3 +21,7 @@ input.form-control{
 .linkToOtherPage{
     color: rgb(226, 43, 134);
 }
+.advert{
+    font: 20px 'Poppins', sans-serif;
+    color: #3f414d;
+}

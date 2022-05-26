@@ -5,14 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assests/style/home.css">
+    <link rel="stylesheet" href="./assests/style/AuthStyle.css">
     <title>Document</title>
 </head>
 <body>
-
-    <div class="live-chat">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit magni ab fugit sit id et consequuntur libero totam exercitationem omnis corporis pariatur excepturi, hic enim sed adipisci corrupti officiis fuga.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorum temporibus eum fugiat veniam eligendi tempora quisquam commodi doloribus adipisci maxime ad culpa voluptas consequatur perspiciatis quos, harum expedita delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quam, at rerum molestiae repellendus, voluptates magni quis aliquid harum maiores a neque asperiores officiis fugit tempora optio perferendis praesentium quae?
-    </div>
 </body>
 </html>
+<?php
+// include ('Security.php');
+
+$idUser = $_SESSION['idUser'] ;
+require_once "DBcon.php";
+
+$query = " SELECT * FROM advertisement ";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_array($result);
+
+echo'<div class="live-chat">' . "<br><br><h3 class='advert'>Advertisements</h3><br>";
+
+foreach($result as $row)
+{
+    echo '<a href="#" style="text-decoration: none; color:rgb(227, 135, 187) "> '.$row['content'] .'</a><br>' ;
+    // echo '<p> <a href="#"> '.$row['content'] .'<a> </p>' ;
+}
+
+echo'</div>';
+
+?>
+

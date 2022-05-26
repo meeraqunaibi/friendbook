@@ -10,8 +10,9 @@
 </head>
 <body>
     <center>
-        <header class="top">
-<h1> Welcome to the Admin panle </h1>
+      <div id = "con">
+        <header style={background-color: rgb(229, 179, 219); width: 900px} class="top">
+<br><h2> Welcome to the Admin panle </h><br><br>
 <?php 
 
 // require_once "DBconf.php";
@@ -47,7 +48,7 @@ if(! $idUser){
   </div>
 
 
-  <button type="submit" value="Add">Add</button>
+  <button id="signButton" type="submit" value="Add">Add</button>
 
 </form>
 
@@ -55,8 +56,9 @@ if(! $idUser){
 
 
 <form action="logout.php" method="post">
-    <button type="Log Out" value="logout">Log Out</button>
+    <button id="signButton" type="Log Out" value="logout">Log Out</button>
 </form>
+<div>
 </center>
 </body>
 </html>

@@ -1,0 +1,40 @@
+#table {
+    width:500px;
+
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #cf9fbe; */
+    background-color: #ECD4BF;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+}
+.username{
+    font: 14px 'Poppins', sans-serif;
+    color: #3f414d;
+}
+#chatButton{
+    background-color:rgb(227, 124, 155);
+    border-color:  rgb(209, 121, 146);
+}
+#tdS{
+    background-image: linear-gradient(to bottom right, rgb(227, 192, 234), rgb(227, 135, 187));
+    /* background-color: #be66c3; */
+}
+#tdB{
+    background-image: linear-gradient(to bottom right, rgb(227, 192, 234), rgb(227, 135, 187));
+    /* background-image: linear-gradient(to bottom right, rgb(222, 194, 227), rgb(244, 171, 212)); */
+    /* background-color: #d896c1; */
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+    margin-right: 40px;
+}
+#chatUsers{
+    text-decoration: none;
+}

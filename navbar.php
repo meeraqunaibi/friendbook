@@ -23,6 +23,7 @@
             <i class="fa fa-bell"></i>
                 <?php
                 require "logout_form.php";
+                require "chatButton.php";
                     $id = $_SESSION['idUser'];
                     $db = new MyDB();
                     $user = $db->getUserInfo($id);

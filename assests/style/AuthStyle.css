@@ -2,8 +2,8 @@
     width : 500px;
 }
 .top{
-    background-color: rgb(215, 250, 244);
-    width: 600px;
+    background-color: rgb(229, 179, 219);
+    width: 900px;
     height: 200px;
 }
 .validationSpan{
@@ -24,4 +24,8 @@ input.form-control{
 .advert{
     font: 20px 'Poppins', sans-serif;
     color: #3f414d;
+}
+#con{
+    width: 950;
+    background-color: antiquewhite;
 }
